@@ -1,36 +1,20 @@
 from selenium import webdriver
-import time
-# Set the options for Firefox browser
-options = webdriver.FirefoxOptions()
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 
-# Set the Firefox profile to use
-profile_directory = '7x25r0qf.default-release'
-options.profile = webdriver.FirefoxProfile(profile_directory)
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# set up the proxy
+proxy = Proxy()
+proxy.proxy_type = ProxyType.MANUAL
+proxy.http_proxy = '185.238.228.179:80'
 
-# Create a new instance of the Firefox driver
-driver = webdriver.Firefox(options=options)
+# create a new Firefox driver with the proxy settings
+profile = webdriver.FirefoxProfile()
+profile.set_preference("network.proxy.type", 1)
+profile.set_preference("network.proxy.http", proxy.http_proxy.split(':')[0])
+profile.set_preference("network.proxy.http_port", int(proxy.http_proxy.split(':')[1]))
+driver = webdriver.Firefox(firefox_profile=profile)
 
-# Navigate to the provided URL
-driver.get('moz-extension://c1dea8f1-5bbe-45fe-9359-b25385ef2454/index.html')
-driver.get('moz-extension://c1dea8f1-5bbe-45fe-9359-b25385ef2454/index.html')
-print("VPN Connect")
-button = WebDriverWait(driver, 300).until(EC.presence_of_all_elements_located((By.XPATH, '/html/body/div[2]/div[2]/div[3]/div[2]/div[2]/div/a/div')))
-if button:
-        print("hi3")
-        button[0].click()
+# navigate to a website to check the IP address
+driver.get('https://www.whatismyip.com/')
 
-search = WebDriverWait(driver, 300).until(EC.presence_of_all_elements_located((By.XPATH, '/html/body/div[2]/div[2]/div[3]/div[1]/form/span/input')))
-if search:
-        print("hi3")
-        search[0].send_keys('Spain') 
-
-button = WebDriverWait(driver, 300).until(EC.presence_of_all_elements_located((By.XPATH, '/html/body/div[2]/div[2]/div[3]/div[2]/div/div[2]')))
-if button:
-        print("hi3")
-        button[0].click()
-
-time.sleep(35)        
+# close the browser
+driver.quit()

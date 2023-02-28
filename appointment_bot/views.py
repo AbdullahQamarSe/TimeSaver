@@ -75,7 +75,7 @@ def base(request):
                 send_mail(
                 'Appointment Form Successfull',
                 message,
-                'abdullah.qfnetwork@gmail.com',
+                'Kabocha608@gmail.com',
                 [model_instance.email],
                 fail_silently=False,
                 )
@@ -402,9 +402,9 @@ def scrap(request):
                                 driver.find_element(By.ID, value='enviarCorreo').click()
                                 time.sleep(60)
                                 # credentials
-                                username = "abdullah.qfnetwork@gmail.com"
+                                username = "Kabocha608@gmail.com"
                                 # generated app password
-                                app_password = "jsnvqvkebjejazcx"
+                                app_password = "htnxczftnifzfbyq"
                                 # https://www.systoolsgroup.com/imap/
                                 gmail_host = 'imap.gmail.com'
                                 # set connection
@@ -467,8 +467,8 @@ def scrap(request):
                                 smtp_server.ehlo()
                                 smtp_server.starttls()
                                 smtp_server.ehlo()
-                                smtp_server.login("abdullah.qfnetwork@gmail.com", "coquekobqyakqwkq")
-                                smtp_server.sendmail("abdullah.qfnetwork@gmail.com", item.email, msg.as_string())
+                                smtp_server.login("Kabocha608@gmail.com", "htnxczftnifzfbyq")
+                                smtp_server.sendmail("Kabocha608@gmail.com", item.email, msg.as_string())
                                 smtp_server.quit()
 
                                 item.appointment = "Approved"
