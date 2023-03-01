@@ -488,6 +488,6 @@ def run_code():
                                 
 
 
-schedule.every(10).seconds.do(run_code)
+schedule.every(10).minutes.do(run_code)
 while True:
     schedule.run_pending()
