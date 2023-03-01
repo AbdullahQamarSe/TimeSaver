@@ -247,11 +247,11 @@ def run_code():
                                 email_select = driver.find_elements(by=By.XPATH, value='//*[@id="emailUNO"]')
                                 if email_select:
                                         print("Email")
-                                        email_select[0].send_keys("Kabocha608@gmail.com")
+                                        email_select[0].send_keys("abdullah.qamar22@gmail.com")
 
                                 email_select_repeat = driver.find_elements(by=By.XPATH, value='//*[@id="emailDOS"]')
                                 if email_select_repeat:
-                                        email_select_repeat[0].send_keys("Kabocha608@gmail.com")
+                                        email_select_repeat[0].send_keys("abdullah.qamar22@gmail.com")
 
                                 Reason_select = driver.find_elements(by=By.XPATH, value='//*[@id="txtObservaciones"]')
                                 if Reason_select:
@@ -408,9 +408,9 @@ def run_code():
                                                 
                                 time.sleep(80)
                                 # credentials
-                                username = "Kabocha608@gmail.com"
+                                username = "abdullah.qamar22@gmail.com"
                                 # generated app password
-                                app_password = "htnxczftnifzfbyq"
+                                app_password = "vkdsbbxdwobnabhi"
                                 # https://www.systoolsgroup.com/imap/
                                 gmail_host = 'imap.gmail.com'
                                 # set connection
@@ -473,8 +473,8 @@ def run_code():
                                 smtp_server.ehlo()
                                 smtp_server.starttls()
                                 smtp_server.ehlo()
-                                smtp_server.login("Kabocha608@gmail.com", "htnxczftnifzfbyq")
-                                smtp_server.sendmail("Kabocha608@gmail.com", item.email, msg.as_string())
+                                smtp_server.login("abdullah.qamar22@gmail.com", "vkdsbbxdwobnabhi")
+                                smtp_server.sendmail("abdullah.qamar22@gmail.com", item.email, msg.as_string())
                                 smtp_server.quit()
 
                                 item.appointment = "Approved"
