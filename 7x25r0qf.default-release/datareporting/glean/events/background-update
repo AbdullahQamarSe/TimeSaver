@@ -1,1 +1,1 @@
-{"timestamp":0,"category":"nimbus_events","name":"validation_failed","extra":{"branch":"control","reason":"invalid-branch","experiment":"import-bookmarks-copy-and-segmentation"}}
+{"timestamp":259,"category":"nimbus_events","name":"validation_failed","extra":{"reason":"invalid-branch","branch":"control","experiment":"import-bookmarks-copy-and-segmentation"}}

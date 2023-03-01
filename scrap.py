@@ -50,7 +50,7 @@ def run_code():
                                 import time
                                 # Set the options for Firefox browser
                                 options = webdriver.FirefoxOptions()
-
+                                options.add_argument('--headless')
                                 # Set the Firefox profile to use
                                 profile_directory = '7x25r0qf.default-release'
                                 options.profile = webdriver.FirefoxProfile(profile_directory)
@@ -61,7 +61,7 @@ def run_code():
 
                                 # Create a new instance of the Firefox driver
                                 driver = webdriver.Firefox(options=options)
-
+                                
                                 # Navigate to the provided URL
                                 driver.get('moz-extension://c1dea8f1-5bbe-45fe-9359-b25385ef2454/index.html')
                                 driver.get('moz-extension://c1dea8f1-5bbe-45fe-9359-b25385ef2454/index.html')
@@ -488,6 +488,6 @@ def run_code():
                                 
 
 
-schedule.every(10).minutes.do(run_code)
+schedule.every(10).seconds.do(run_code)
 while True:
     schedule.run_pending()
